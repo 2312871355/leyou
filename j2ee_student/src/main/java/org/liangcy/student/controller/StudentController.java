@@ -22,6 +22,10 @@ public class StudentController {
     public String selectStudent(Model model, Student student) {
         List<Student> studentList = studentService.selectStudent(student);
         model.addAttribute("studentList",studentList);
+        System.out.println();
         return "student";
+    }
+    public void test(){
+        System.out.println("添加了一行代码");
     }
 }
