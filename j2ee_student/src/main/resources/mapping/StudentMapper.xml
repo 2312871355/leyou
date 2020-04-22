@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.liangcy.student.dao.StudentMapper">
+    <resultMap id="Student" type="org.liangcy.student.pojo.Student">
+        <id property="id" javaType="int" column="id"></id>
+        <result property="name" javaType="java.lang.String" column="name" />
+        <result property="score" javaType="java.lang.Double" column="score" />
+        <result property="address" javaType="java.lang.String" column="address" />
+        <result property="cid" javaType="int" column="cid" />
+        <association property="clazz" javaType="org.liangcy.student.pojo.Clazz" column="cid">
+            <id property="id" javaType="int" column="id"></id>
+            <result property="cname" javaType="java.lang.String" column="cname" />
+        </association>
+    </resultMap>
+    <select id="selectStudent" resultMap="Student">
+        select * from student s left join clazz c on s.cid=c.id
+    </select>
+
+</mapper>

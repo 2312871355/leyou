@@ -1,0 +1,22 @@
+mybatis:
+  typeAliasesPackage: org.liangcy.student.pojo
+  mapperLocations: classpath:mapping/*.xml
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/j2ee?serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  resources:
+    static-locations: classpath:/templates/
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html; charset=utf-8
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .ftl
+    template-loader-path: classpath:/templates
